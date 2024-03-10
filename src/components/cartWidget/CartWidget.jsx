@@ -1,12 +1,15 @@
-import './cartWidget.css'
+import {BsCartFill} from "react-icons/bs";
+import Badge from 'react-bootstrap/Badge';
 
-const CartWidget = () => {
+const CartWidget = ({counter}) => {
+
     return(
-        <div className='container'>
-        <img className='cart' src='./images/CartOutline.png' alt='carrito'/>
-        <span className='badge'> 6 </span>
-        </div>
+        <button type="button" class="btn position-relative">
+            <BsCartFill color='greenyellow' fontSize={'2.3rem'} title="Añadir al carrito"/>
+            <span class="position-absolute top-0 start-100 translate-middle bg-success border border-1 border-light rounded">
+                <Badge bg="success">{counter}</Badge>
+            </span>
+        </button>
     )
 }
-
 export default CartWidget

@@ -1,34 +1,36 @@
-import './navbar.css'
-import CartWidget from '../cartWidget/CartWidget.jsx'
+import './navbar.css';
+import CartWidget from '../cartWidget/CartWidget.jsx';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown'
-import {Badge} from 'react-bootstrap';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Badge } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 function NavBar() {
     return (
         <Navbar bg="success" data-bs-theme="light">
             <Container>
                 <img alt="Logo" width= "15%" className="d-inline-block align-top rounded" src="./images/logo.png"/>
-                <Navbar.Brand href="#home" className="fw-bolder fst-italic"> PETIT Servicios </Navbar.Brand>
+                <Navbar.Brand as={NavLink} to='/' className="fw-bolder fst-italic"> PETIT Servicios </Navbar.Brand>
                 <Nav className="me-auto">
-                    <Nav.Link href="#Servicios" className="fw-medium">Servicios</Nav.Link>
-                    <Nav.Link href="#Cobertura" className="fw-medium">Cobertura</Nav.Link>
-                    <Nav.Link href="#Nosotros" className="fw-medium">Nosotros</Nav.Link>
+                    <Nav.Link as={NavLink} to='/Servicios' className="fw-medium">Servicios</Nav.Link>
+                    <Nav.Link as={NavLink} to='/Productos' className="fw-medium">Productos</Nav.Link>
+                    <Nav.Link as={NavLink} to='/Nosotros' className="fw-medium">Nosotros</Nav.Link>
                     <NavDropdown className="fw-medium" id="nav-dropdown-dark-example" title="Compra OnLine" menuVariant="ligth">
-                        <NavDropdown.Item href="#action/3.1">Categorias</NavDropdown.Item>
+                        <NavDropdown.Item>Categorias de Productos
+                            <NavDropdown.Item as={NavLink} to='/categories/trampas'>Trampas</NavDropdown.Item>
+                            <NavDropdown.Item as={NavLink} to='/categories/insectos'>Insectos</NavDropdown.Item>
+                            <NavDropdown.Item as={NavLink} to='/categories/aves'>Aves</NavDropdown.Item>
+                        </NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.2">Fumigaciones</NavDropdown.Item>
+                        <Nav.Link as={NavLink} to='/Fumigaciones'>Fumigaciones</Nav.Link>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.3">Control de Plagas</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">Mantenimientos</NavDropdown.Item>
+                        <Nav.Link as={NavLink} to='/Control de Plagas'>Control de Plagas</Nav.Link>
                     </NavDropdown>
-                    <Nav.Link href="#Contacto" className="fw-medium">Contacto</Nav.Link>
+                    <Nav.Link as={NavLink} to='/Contacto' className="fw-medium">Contacto</Nav.Link>
                 </Nav>
-                
-                <Badge pill bg="light"><Nav.Link href="#Carrito"><CartWidget/></Nav.Link></Badge>
+                <Badge pill bg="light"><Nav.Link as={NavLink} to='/Carrito'><CartWidget counter={15}/></Nav.Link></Badge>
             </Container>
         </Navbar>
     );
