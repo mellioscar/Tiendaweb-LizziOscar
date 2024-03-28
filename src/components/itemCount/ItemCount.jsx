@@ -1,12 +1,8 @@
 import React from 'react'
 import {useState} from 'react';
 
-const ItemCount = ({stock}) =>{
-    const [count, setCount]= useState(1)
-
-    const onAdd = ()=>{
-            console.log('COMPRASTE UN ARTICULO')
-    }
+const ItemCount = ({stock, onAdd}) =>{
+    const [count, setCount]= useState(0)
 
     const sumar = () =>{
         if(count < stock){
@@ -20,17 +16,20 @@ const ItemCount = ({stock}) =>{
         }
     }
 
-    return(
-        <>
-        <div className="d-flex justify-content-center">
-            <button className="btn btn-danger rounded-circle" onClick={restar}>-</button>
-            <span className="btn bg-success-subtle">{count}</span>
-            <button className="btn btn-success rounded-circle" onClick={sumar}>+</button>
-        </div>
-        <br></br>
-        <button className="btn bg-info-subtle d-grid col-2 mx-auto" disabled={stock === 0 || count === 0} onClick={onAdd}>Comprar</button>
+    const enviarCantidad = () =>{
+        onAdd(count)
+    }
 
-        </>
+    return(
+        <div>
+            <div className="d-flex justify-content-center">
+                <button className="btn btn-danger rounded" onClick={restar}>-</button>
+                <span className="btn bg-success-subtle rounded">{count}</span>
+                <button className="btn btn-success rounded" onClick={sumar}>+</button>
+            </div>
+            <br></br>
+            <button className="btn bg-info-subtle d-grid col-2 mx-auto" disabled={stock === 0 || count === 0} onClick={enviarCantidad}>Agregar al Carrito</button>
+        </div>
     )
 }
 export default ItemCount

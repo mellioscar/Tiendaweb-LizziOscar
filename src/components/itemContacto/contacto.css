@@ -1,0 +1,25 @@
+.container {
+    max-width: 100vw;
+    padding-inline: 1rem;
+    margin: 0 auto;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: flex-start;
+}
+
+.formulario input {
+    padding: .1rem;
+    width: 20rem;
+    border-radius: .5rem;
+    border: 2px solid green;
+}
+
+.formulario input:focus {
+    outline: 0;
+    border: 1px solid var(--clr-main);
+    outline: 2px solid var(--clr-main);
+}

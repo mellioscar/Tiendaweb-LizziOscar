@@ -1,39 +1,47 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import {getProducts} from '../../mock/fakeApi';
 import ItemList from '../itemList/ItemList';
 import { useParams } from 'react-router-dom';
+import { toCapital } from '../helpers/toCapital';
+import { Loader } from '../loader/Loader';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../../services/firebase.js';
 
 function ItemListContainer({greeting}) {
     const [productos, setProductos]=useState([])
-    const  [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
     const {categoryId} = useParams()
 
     useEffect(()=>{
         setLoading(true)
-        getProducts()
+    //CONECCION CON LA COLLECTION
+        const productsCollection = categoryId ? query(collection(db, "productos"), where("category", "==", categoryId)) : collection(db, "productos")
+    //PEDIR DOCUMENTOS
+        getDocs(productsCollection)
         .then((res)=>{
-            if(categoryId){
-                setProductos(res.filter((prod)=> prod.category === categoryId))
-            }else{
-                setProductos(res)
+            const list = res.docs.map((product)=>{
+            return{
+                id:product.id,
+                ...product.data()
             }
         })
-        .catch((error)=> console.log(error, 'ERROR!!!'))
+        setProductos(list)
+        })
+        .catch((error)=> console.log(error))
         .finally(()=> setLoading(false))
         },[categoryId])
 
     if(loading){
-        return <h2>Cargando!...</h2>
+        return (<Loader/>)
     }
 
     return (
         <div>
-        {categoryId 
-        ?<h1 className='fst-italic text-danger-emphasis'>{greeting} <span style={{color:'violet'}}>{categoryId}</span></h1>
-        :<h1 className='fst-italic text-danger-emphasis'>{greeting}</h1>
-        }
-        <ItemList productos={productos}/>
+            {categoryId 
+            ?<h1 className='fst-italic text-danger-emphasis'>{greeting} <span style={{color:'green'}}>{toCapital(categoryId)}</span></h1>
+            :<h1 className='fst-italic text-danger-emphasis'>{greeting}</h1>
+            }
+            <ItemList productos={productos}/>
         </div>
     )
 }
