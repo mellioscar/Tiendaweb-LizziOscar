@@ -13,7 +13,7 @@ const Cart = () => {
                 <br></br>
                 <h4>Te invitamos a ver todos nuestros productos 😊</h4>
                 <br></br>
-                <Link className='btn bg-info-subtle' to='/'>VER PRODUCTOS</Link>
+                <Link className='btn bg-info-subtle' to='/Productos'>VER PRODUCTOS</Link>
             </div>
             : <CartView/>}
         </div>

@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from './components/NavBar/NavBar.jsx';
+import NavBar from './components/navBar/NavBar.jsx';
 import ItemListContainer from './components/itemListContainer/ItemListContainer.jsx';
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -12,7 +12,7 @@ import Cart from './components/cart/Cart.jsx';
 import { CartProvider } from './context/CartContext.jsx';
 import Nosotros from './components/viewNosotros/Nosotros.jsx';
 import Checkout from './components/checkout/Checkout.jsx';
-import Footer from './components/NavBar/Footer.jsx';
+import Footer from './components/navBar/Footer.jsx';
 
 function App() {
   return (

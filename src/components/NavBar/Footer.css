@@ -1,16 +1,11 @@
 .footer {
-    background-color: #333;
+    background: linear-gradient(to top, green, white);
     color: #fff;
-    padding: 20px 0;
+    padding: 40px 0 5px;
     text-align: center;
     position: absolute;
     bottom: 100;
     width: 100%;
-}
-
-.container {
-    max-width: 100vw;
-    margin: 0 auto;
 }
 
 a {
@@ -20,5 +15,5 @@ a {
 }
 
 a:hover {
-    color: green;
+    color: rgb(133, 240, 33);
 }

@@ -1,3 +1,11 @@
+//DETALLE DE FUNCIONES:
+// - addItem: Añade un producto al carrito o incrementa su cantidad si ya está en el carrito.
+// - clear: Limpia el carrito.
+// - removeItem: Remueve un producto específico del carrito.
+// - isInCart: Verifica si un producto está en el carrito.
+// - cartQuantity: Calcula la cantidad total de productos en el carrito.
+// - cartPriceTotal: Calcula el precio total de todos los productos en el carrito.
+
 import {createContext, useState} from "react";
 
 //CREA EL CONTEXTO

@@ -20,7 +20,7 @@ function NavBar() {
                     <Nav.Link as={NavLink} to='/Servicios' style={{fontSize:'25px', lineHeight:'20px'}}>Servicios</Nav.Link>
                     <Nav.Link as={NavLink} to='/Productos' style={{fontSize:'25px', lineHeight:'20px'}}>Productos</Nav.Link>
                     <Nav.Link as={NavLink} to='/Nosotros' style={{fontSize:'25px', lineHeight:'20px'}}>Nosotros</Nav.Link>
-                    <NavDropdown style={{fontSize:'25px', lineHeight:'20px'}} id="dropdown-item-button" title="Compra OnLine" menuVariant="ligth">
+                    <NavDropdown style={{fontSize:'25px', lineHeight:'20px'}} id="dropdown-item-button" title="Tienda OnLine" menuVariant="ligth">
                         <NavDropdown.ItemText>Categorias de Productos</NavDropdown.ItemText>
                             <NavDropdown.Item as={NavLink} to='/categories/trampas'>- Trampas</NavDropdown.Item>
                             <NavDropdown.Item as={NavLink} to='/categories/insectos'>- Insectos</NavDropdown.Item>
