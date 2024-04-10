@@ -25,7 +25,7 @@ const Contacto = ({greeting}) => {
                         <input className="bg-info-subtle d-grid col-2 mx-auto p-1 m-3" style={{ height:'130px'}} type="text" placeholder="<- Ingresá tu consulta" {...register("nombre")}/>
                     </Col>
                     <Col>
-                        <Image src='../images/trabajos-1.jpg' alt="Petit Servicios" className="d-grid col-7 mx-auto d-block" thumbnail/>
+                        <Image src='../images/Trabajos-1.jpg' alt="Petit Servicios" className="d-grid col-7 mx-auto d-block" thumbnail/>
                     </Col>
                 </Row>
                 <button className="btn bg-info-subtle d-grid col-2 mx-auto" type="submit">Enviar</button>
