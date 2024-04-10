@@ -31,4 +31,4 @@ const CartView = ({counter}) => {
     )
 }
 
-export default CartView  
+export default CartView;

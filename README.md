@@ -17,7 +17,7 @@ Este proyecto es una aplicación de carrito de compras desarrollada con React.js
 
 ## Version Host 🛜
 
-[Petit Servicios WEB]()
+[Petit Servicios WEB](https://tiendaweb-lizzi-oscar-7kxm4x2vr-oscars-projects-85a875b4.vercel.app/)
 
 ## Librerias utilizadas 📖
 
@@ -30,14 +30,12 @@ Este proyecto es una aplicación de carrito de compras desarrollada con React.js
 ├── src/
 │   ├── components/
 │   │   ├── cart/
-│   │   └── Cart.jsx
-│   │   ├── cartView/
-│   │   └── CartView.jsx
-│   │   ├── CartWidget/
-│   │   └── cartWidget.css
-│   │   └── CartWidget.jsx
+│   │   │   ├── Cart.jsx
+│   │   │   ├── CartView.jsx
+│   │   │   └── cartWidget.css
+│   │   │   └── CartWidget.jsx
 │   │   ├── checkout/
-│   │   └── Checkout.jsx
+│   │   │   └── Checkout.jsx
 │   │   ├── ItemCount/
 │   │   └── ...
 │   ├── context/

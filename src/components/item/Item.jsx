@@ -15,4 +15,4 @@ const Item = ({producto}) => {
     )
 }
 
-export default Item
+export default Item;

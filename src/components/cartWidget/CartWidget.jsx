@@ -18,4 +18,4 @@ const CartWidget = ({counter}) => {
         </Link>
     )
 }
-export default CartWidget
+export default CartWidget;

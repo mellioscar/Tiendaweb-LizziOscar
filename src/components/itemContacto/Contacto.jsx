@@ -35,4 +35,4 @@ const Contacto = ({greeting}) => {
     )
 }
 
-export default Contacto
+export default Contacto;
